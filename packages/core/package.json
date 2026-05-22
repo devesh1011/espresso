@@ -1,0 +1,57 @@
+{
+  "name": "@espresso/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    },
+    "./chains": {
+      "types": "./dist/src/chains.d.ts",
+      "import": "./dist/src/chains.js"
+    },
+    "./env": {
+      "types": "./dist/src/env.d.ts",
+      "import": "./dist/src/env.js"
+    },
+    "./golem/rlpData": {
+      "types": "./dist/src/golem/rlpData.d.ts",
+      "import": "./dist/src/golem/rlpData.js"
+    },
+    "./evm/tx": {
+      "types": "./dist/src/evm/tx.d.ts",
+      "import": "./dist/src/evm/tx.js"
+    },
+    "./wire/frames": {
+      "types": "./dist/src/wire/frames.d.ts",
+      "import": "./dist/src/wire/frames.js"
+    },
+    "./wire/schema": {
+      "types": "./dist/src/wire/schema.d.ts",
+      "import": "./dist/src/wire/schema.js"
+    },
+    "./arkiv/client": {
+      "types": "./dist/src/arkiv/client.d.ts",
+      "import": "./dist/src/arkiv/client.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "biome check src tests scripts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "reference:broadcast": "tsx scripts/reference-sign-broadcast.ts"
+  },
+  "dependencies": {
+    "@arkiv-network/sdk": "^0.6.8",
+    "viem": "^2.40.1",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
+  }
+}
