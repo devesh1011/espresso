@@ -1,0 +1,27 @@
+{
+  "name": "@espresso/ground-station",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/index.ts",
+    "verify:firmware": "tsx scripts/verify-firmware-vector.ts",
+    "start": "node dist/index.js",
+    "lint": "biome check src tests scripts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@espresso/core": "workspace:*",
+    "@hono/node-server": "^1.19.6",
+    "hono": "^4.10.7",
+    "serialport": "^13.0.0",
+    "viem": "^2.40.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0"
+  }
+}
